@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     position: fixed;
-    font-size: 16px;
+    font-size: 18px;
     background-image: linear-gradient(180deg, rgba(0,0,0,0.7) 10%, transparent);
     z-index: 1;
 }
@@ -47,9 +47,19 @@
 @media screen and (max-width: 768px) {
     .navbar {
         padding: 20px 4%;
+        font-size: 14px;
     }
-    
+    .navbar-left img{
+        width: 32px
+    }
 }
+
+@media screen and (max-width: 600px) {
+    .navbar-left ul {
+        display: none;
+    }
+}
+
 
 
 
