@@ -1,0 +1,34 @@
+.music-card {
+    width: 200px;
+    padding: 10px;
+}
+
+.music-card img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.music-card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+.music-card p {
+    font-size: 14px;
+    color: white;
+    text-align: center;
+}
+
+
+@media (max-width: 800px) {
+    .music-cards {
+        width: 150px;
+    }
+
+    .music-card p {
+        font-size: 12px;
+    }
+}

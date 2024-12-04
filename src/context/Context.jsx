@@ -1,30 +1,33 @@
-import { createContext, useState } from "react";
-import SearchSongs from "../config/search";
+import { createContext, useState } from "react"
+import SearchSongs from "../config/search"
 
-export const Context = createContext();
+export const Context = createContext()
 
 const ContextProvider = (props) => {
-    const [input, setInput] = useState("")
-    const [loading, setLoading] = useState(false);
+  const [input, setInput] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [searchResults, setSearchResults] = useState([]) // Add this to store search results
 
+  const onSent = async () => {
+    setLoading(true)
+    let response = await SearchSongs(input)
+    setSearchResults(response)
+    setLoading(false)
+  }
 
-    const onSent = async () => {
-        setLoading(true);
-        let response = await SearchSongs(input)
-    }
-    
+  const contextValue = {
+    onSent,
+    input,
+    setInput,
+    loading,
+    searchResults
+  }
 
-    const contextValue = {
-        onSent,
-        input,
-        setInput
-    }
-
-    return (
-        <Context.Provider value ={contextValue}>
-        {props.children}
-        </Context.Provider>
-    )
+  return (
+    <Context.Provider value={contextValue}>
+      {props.children}
+    </Context.Provider>
+  )
 }
 
 export default ContextProvider

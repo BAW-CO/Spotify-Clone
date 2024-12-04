@@ -3,16 +3,8 @@ import { useEffect, useState } from "react";
 import getAccessToken from "../../auth";
 
 
-const SearchSongs = () => {
-    const [songs, setSongs] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-    const [totalTracks, setTotalTracks] = useState(0);
-    const [searchQuery, setSearchQuery] = useState("");
-}
 
-const fetchSearchResults = async (accessToken, searchQuery, offset = 0) => {
-    const limit = calculateLimit(); // Use calculated limit
+const SearchSongs = async (accessToken, searchQuery, offset = 0) => {
 
     try {
       const response = await fetch(

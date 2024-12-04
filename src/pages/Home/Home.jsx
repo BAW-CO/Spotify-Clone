@@ -4,11 +4,18 @@ import Navbar from '../../components/Navbar/Navbar'
 import heroImage from '../../assets/hero-image.jpg'
 import Footer from '../../components/Footer/Footer'
 import { Context } from '../../context/Context'
+import { useNavigate } from 'react-router-dom'
 
 
 const Home = () => {
 
+    const navigate = useNavigate()
     const { onSent, input, setInput } = useContext(Context)
+
+    const handleSearch = () => {
+        onSent()
+        navigate('/search-results')
+    }
     return (
       <div className='home'>
             <Navbar/>
@@ -27,15 +34,17 @@ const Home = () => {
                             }
                         }}
                                 />
-                    {input?<button 
+                    {/* {input?<button 
                     onClick={() => onSent()}
-                    className="btn">Search</button>:null}
+                    className="btn">Search</button>:null} */}
+
+                    <button onClick={handleSearch}
+                    className="btn">
+                    Search 
+                    </button>
+
                 </div>
-                    {/* <TitleCards title={"Blockbuster Movies"} category={"top_rated"}/>
-                    <TitleCards title={"Recently Added"} category={"now_playing"}/>
-                    <TitleCards title={"Top Picks for You"} category={"popular"}/>
-                    <TitleCards title={"Coming Soon"} category={"upcoming"}/> */}
-                </div>
+            </div>
                 <Footer/>
         </div>
     )
