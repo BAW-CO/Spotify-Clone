@@ -5,6 +5,7 @@ import getAccessToken from "../../auth";
 
 
 const SearchSongs = async (accessToken, searchQuery, offset = 0) => {
+  const limit = calculateLimit(); // Use calculated limit
 
     try {
       const response = await fetch(

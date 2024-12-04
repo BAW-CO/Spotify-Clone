@@ -1,6 +1,7 @@
 .music-card {
     width: 200px;
     padding: 10px;
+    text-decoration: none;
 }
 
 .music-card img {
@@ -14,12 +15,14 @@
     font-weight: 600;
     color: white;
     text-align: center;
+    text-decoration: none;
 }
 
 .music-card p {
     font-size: 14px;
     color: white;
     text-align: center;
+    text-decoration: none;
 }
 
 

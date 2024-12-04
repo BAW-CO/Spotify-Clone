@@ -4,28 +4,27 @@ import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 import MusicCard from '../../components/MusicCard/musicCard'
 import albumCover from '../../assets/albumCover.png'
-import { useLocation } from 'react-router-dom'
-import { mockTracks } from '../../data/mockTracks'
+import play from '../../assets/circle-play-solid.svg'
 
-function Player() {
-  const location = useLocation()
-  const { trackData } = location.state
+// import { useLocation } from 'react-router-dom'
+// import { mockTracks } from '../../data/mockTracks'
+
+const Player = () => {
+//   const location = useLocation()
+//   const { trackData } = location.state
 
   return (
     <div>
         <Navbar />
       <div className="player-container">
-        <img src={albumCover} alt={trackData.name} />
-        <h1>{trackData.name}</h1>
-        <h2>{trackData.artists[0].name}</h2>
-        <p>{trackData.album.name}</p>
+        <img src={albumCover} alt="album art" />
+        <img src={play} className="play-icon" alt="play" />
+        <h1>Track Name</h1>
+        <h2>Artist Name</h2>
+        <p>Lyrics</p>
       </div>
       
       <div className="more-results">
-        <MusicCard/>
-        <MusicCard/>
-        <MusicCard/>
-        <MusicCard/>
         <MusicCard/>
         <MusicCard/>
         <MusicCard/>

@@ -5,7 +5,7 @@ import { mockTracks } from '../../data/mockTracks'
 
 function MusicCard({ track = mockTracks[0] }) {
   return (
-    <Link to={`/Player/${track.id}`} state={{ trackData: track }}>
+    <Link to={`/Player/`} state={{ trackData: track }}>
       <div className="music-card">
         <img src={albumCover} alt={track.name} />
         <h3>{track.name}</h3>
