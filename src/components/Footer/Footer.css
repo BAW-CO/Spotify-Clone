@@ -24,7 +24,7 @@
     display: grid;
     grid-template-columns: auto auto auto auto;
     gap: 16px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     list-style: none;
 }
 
