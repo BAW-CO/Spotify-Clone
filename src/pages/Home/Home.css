@@ -3,10 +3,11 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
+
   .hero-container {
     width: 100vw;
     height: 75vh;
+    position: relative;
   }
   
   .hero-container img {
@@ -16,30 +17,26 @@
     z-index: 0;
     max-width: 1800px;
     place-items: center;
-  }
-  
-
-.banner-img{
-    width: 100%;
     mask-image: linear-gradient(to top, transparent, black 75%);
     -weblit-mask-image: linear-gradient(to top, transparent, black 75%);
-}
+  }
 
 .hero-caption h1{
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
     font-size: 60px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     text-align: center;
     max-width: 1800px;
-
+    z-index: 1;
 }
 
 .hero-caption input{
     position: absolute;
-    top: 55%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 50%;
@@ -56,7 +53,7 @@
 
 .hero-caption .btn {
     position: absolute;
-    top: 62%;
+    top: 52%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 25%;
