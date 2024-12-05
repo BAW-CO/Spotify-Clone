@@ -1,5 +1,9 @@
-const CLIENT_ID = "291a13efe2f64f23ac56eb0d3ecff9cd"
-const CLIENT_SECRET = "b88f7f365bb44effb44f1ce9bd9264f1"
+// const CLIENT_ID = "291a13efe2f64f23ac56eb0d3ecff9cd"
+// const CLIENT_SECRET = "b88f7f365bb44effb44f1ce9bd9264f1"
+
+const CLIENT_ID = import.meta.env.VITE_CLIENT_ID
+const CLIENT_SECRET = import.meta.env.VITE_CLIENT_SECRET
+
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
 const REDIRECT_URI = "http://localhost:5173"
 const RESPONSE_TYPE = "token"
