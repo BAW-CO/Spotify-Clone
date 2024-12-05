@@ -1,32 +1,29 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Context } from '../../context/Context'
+import MusicCard from '../../components/MusicCard/musicCard'
 import './Search-results.css'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
-import MusicCard from '../../components/MusicCard/musicCard'
 
+function SearchResults() {
+  const { searchResults } = useContext(Context)
 
-const SearchResults = () => {
-    return (
-        <div className='page-wrapper'>
-            <Navbar/>
-            <main className='search-results'>
-                <div className="results-container">
-                    <h2>Search Results</h2>
-                    <div className="results">
-                        <MusicCard/>
-                        <MusicCard/>
-                        <MusicCard/>
-                        <MusicCard/>
-                        <MusicCard/>
-                        <MusicCard/>
-                        <MusicCard/>
-                        <MusicCard/>
-                    </div>
+  return (
+    <div className="page-wrapper">
+            <Navbar />
+        <main className="search-results">
+            <div className="results-container">
+                <h2>Search Results:</h2>
+                <div className="results">
+                {searchResults?.map((track) => (
+                    <MusicCard key={track.id} track={track} />
+                ))}
                 </div>
-            </main>
-            <Footer/>
-        </div>
-    )
+            </div>
+        </main>
+        <Footer />
+    </div>
+  )
 }
 
-export default SearchResults;
+export default SearchResults

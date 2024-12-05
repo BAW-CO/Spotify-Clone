@@ -1,19 +1,22 @@
 import './musicCard.css'
-import albumCover from '../../assets/albumCover.png'
 import { Link } from 'react-router-dom'
-import { mockTracks } from '../../data/mockTracks'
 
-function MusicCard({ track = mockTracks[0] }) {
+function MusicCard({ track }) {
+  if (!track) return null
+
   return (
-    <Link to={`/Player/`} state={{ trackData: track }}>
+    <Link to={`/Player`} state={{ trackData: track }}>
       <div className="music-card">
-        <img src={albumCover} alt={track.name} />
+        <img 
+          src={track.album?.images[0]?.url || track.images?.[0]?.url} 
+          alt={track.name} 
+        />
         <h3>{track.name}</h3>
-        <p>{track.artists[0].name}</p>
+        <p>{track.artists?.[0]?.name}</p>
       </div>
     </Link>
   )
 }
 
-
 export default MusicCard
+
