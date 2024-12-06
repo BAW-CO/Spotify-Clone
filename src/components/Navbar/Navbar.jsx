@@ -12,7 +12,8 @@ function Navbar() {
   const [showLogin, setShowLogin] = useState(false)
 
   return (
-    <div className='navbar'>
+   <>
+ <div className='navbar'>
       <div className="navbar-left">
       <Link to="/">
         <img src={logo} alt="logo" className="logo" />
@@ -28,11 +29,13 @@ function Navbar() {
             <img src={user} alt="Profile" />
             <img src={cloud} alt="Cloud" />
       </div>
-      <Login 
+  
+    </div>
+    <Login 
         isOpen={showLogin} 
         onClose={() => setShowLogin(false)} 
       />
-    </div>
+  </>
   )
 }
 
