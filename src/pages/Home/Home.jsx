@@ -37,8 +37,8 @@ const Home = () => {
           />
           {input && 
             <button 
-              onClick={handleSearch}
-              className="btn"
+            onClick={handleSearch}
+            className="btn"
             >
               Search
             </button>
